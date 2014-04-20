@@ -1,0 +1,11 @@
+.httr-oauth
+
+*.csv
+
+data/jeff.jpg
+
+.RData
+
+.Rhistory
+
+test
