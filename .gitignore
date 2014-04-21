@@ -2,6 +2,10 @@
 
 *.csv
 
+*.pdf
+
+*.for
+
 data/jeff.jpg
 
 .RData
