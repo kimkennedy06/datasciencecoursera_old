@@ -15,7 +15,9 @@ run_analysis <- function( ){
   subject_train<-read.table("UCI HAR Dataset/train/subject_train.txt")
   TrainDF<-cbind(subject_train,y_train,x_train)
   
+  #Combined Test and Train Data
   OverallData<-rbind(TestDF,TrainDF)
   
+  #Gave OverallData corresponding column names
   colnames(OverallData)<-c("Subject_ID","Activity_ID",features)
 }
