@@ -25,5 +25,5 @@ run_analysis <- function( ){
   activities<-read.table("UCI HAR Dataset/activity_labels.txt",col.names=c("Activity_ID","Activity"))
   
   #Join Activity Data Frame with Overall Data
-  OverallDataActivities<-merge(activities,OverallData,by="Activity_ID",all.x=TRUE)
+  OverallDataActivities<-merge(activities,OverallData,by='Activity_ID',all.x=TRUE)[,-c(1)]
 }
