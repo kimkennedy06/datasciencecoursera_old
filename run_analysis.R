@@ -23,4 +23,7 @@ run_analysis <- function( ){
   
   #Read in Activity List
   activities<-read.table("UCI HAR Dataset/activity_labels.txt",col.names=c("Activity_ID","Activity"))
+
+  #Join Activity Data Frame with Overall Data
+  OverallDataActivities<-join(activities,OverallData)
 }
