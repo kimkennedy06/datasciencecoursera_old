@@ -32,4 +32,7 @@ run_analysis <- function( ){
 
   #Reorder Data Frame to have Subject_ID first
   OverallDataReordered<-OverallDataActivities[,c(2,1,3:length(OverallDataActivities))]
+  
+  #Order Data Frame based off Subject_ID
+  SubjectOrderData<-OverallDataReordered[order(OverallDataReordered$Subject_ID),]
 }
