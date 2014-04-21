@@ -21,6 +21,9 @@ run_analysis <- function( ){
   #Gave OverallData corresponding column names
   colnames(OverallData)<-c("Subject_ID","Activity_ID",features)
   
+  #Extract only columns with mean() and std()
+  new_OverallData<-OverallData[c("Subject_ID","Activity_ID",grep("(mean\\(\\)|std\\(\\))",names(OverallData),value=TRUE))]
+  
   #Read in Activity List
   activities<-read.table("UCI HAR Dataset/activity_labels.txt",col.names=c("Activity_ID","Activity"))
   
