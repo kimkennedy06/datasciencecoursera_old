@@ -20,4 +20,7 @@ run_analysis <- function( ){
   
   #Gave OverallData corresponding column names
   colnames(OverallData)<-c("Subject_ID","Activity_ID",features)
+  
+  #Read in Activity List
+  activities<-read.table("UCI HAR Dataset/activity_labels.txt",col.names=c("Activity_ID","Activity"))
 }
