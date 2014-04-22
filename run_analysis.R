@@ -27,7 +27,7 @@ run_analysis <- function( ){
   #Read in Activity List
   activities<-read.table("UCI HAR Dataset/activity_labels.txt",col.names=c("Activity_ID","Activity"))
   
-  #Join Activity Data Frame with Overall Data
+  #Merge Activity Data Frame with Overall Data and remove Activity_ID column (remove redundancy)
   OverallDataActivities<-merge(activities,new_OverallData,by='Activity_ID',all.x=TRUE)[,-c(1)]
 
   #Reorder Data Frame to have Subject_ID first
