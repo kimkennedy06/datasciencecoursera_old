@@ -2,10 +2,20 @@
 
 *.csv
 
+*.pdf
+
+*.for
+
 data/jeff.jpg
 
-.RData
+*.RData
 
 .Rhistory
 
 test
+
+UCI HAR Dataset/*
+
+submitscript1.R
+
+submitscript3.R
