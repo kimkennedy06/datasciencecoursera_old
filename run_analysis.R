@@ -36,6 +36,20 @@ run_analysis <- function( ){
   #Order Data Frame based off Subject_ID
   SubjectOrderData<-OverallDataReordered[order(OverallDataReordered$Subject_ID),]
 
+  #Rename Feature Labels to be more descriptive
+  names(SubjectOrderData)<-gsub("tBody","Time_Domain_Body",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("fBody","Frequency_Domain_Body",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("tGravity","Time_Domain_Gravity",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("fGravity","Frequency_Domain_Gravity",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("Acc","_Accelerometer",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("Jerk","_Jerk",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("Gyro","_Gyroscope",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("Mag","_Magnitude",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("BodyBody","Body_Body",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("-","_",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("std\\(\\)","Standard_Deviation",names(SubjectOrderData))
+  names(SubjectOrderData)<-gsub("mean\\(\\)","Mean",names(SubjectOrderData))
+  
   #Average of Each Variable according to Subject_ID and Activity
   AvgMeasurements<-aggregate(SubjectOrderData[,3:length(SubjectOrderData)],list(Subject_ID=SubjectOrderData$Subject_ID,Activity=SubjectOrderData$Activity),mean)
   AvgMeasurements<-AvgMeasurements[order(AvgMeasurements$Subject_ID),]
